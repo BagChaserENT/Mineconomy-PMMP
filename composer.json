@@ -1,0 +1,19 @@
+{
+    "name": "bagchaser/mineconomy",
+    "description": "Economic system for PocketMine-MP",
+    "type": "project",
+    "license": "GNU General Public License v3.0",
+    "autoload": {
+        "psr-4": {
+            "Bagchaser\\Mineconomy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "BagChaser"
+        }
+    ],
+    "require": {
+        "terpz710/commando": "*"
+    }
+}

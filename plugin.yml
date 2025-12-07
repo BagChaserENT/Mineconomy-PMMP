@@ -1,0 +1,11 @@
+name: Mineconomy
+version: 1.0.0
+author: BagChaser
+api: 5.36.0
+main: bagchaser\mineconomy\Core
+
+permissions:
+  mineconomy.cmd:
+    default: true
+  mineconomy.op:
+    default: op
