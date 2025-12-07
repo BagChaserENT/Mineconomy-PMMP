@@ -37,7 +37,7 @@ class AddMoneyCommand extends BaseCommand {
             return;
         }
         $sql->addMoney($args["player"], $args["amount"]);
-        $format = $sql=>format($args["amount"]);
+        $format = $sql->format($args["amount"]);
         $sender->sendMessage("Added " . $format . " to " . $args["player"] . " balance!");
     }
 }
