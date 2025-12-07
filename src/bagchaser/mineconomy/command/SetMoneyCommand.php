@@ -41,7 +41,7 @@ class SetMoneyCommand extends BaseCommand {
         $sender->sendMessage("Set " . $args["player"] . " balance to " . $format);
     }
 
-    protected function getPermission() : string{
+    public function getPermission() : string{
         return "mineconomy.op";
     }
 }
