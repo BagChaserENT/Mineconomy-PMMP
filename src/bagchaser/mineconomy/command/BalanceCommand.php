@@ -28,7 +28,7 @@ class BalanceCommand extends BaseCommand {
         $sender->sendMessage("Your balance is " . $format);
     }
 
-    protected function getPermission() : string{
+    public function getPermission() : string{
         return "mineconomy.cmd";
     }
 }
