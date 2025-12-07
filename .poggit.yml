@@ -5,4 +5,8 @@ branches:
 projects:
   Mineconomy-PMMP:
     path: ""
+    libs:
+       - src: CortexPE/Commando/Commando
+         version: ^3.2.1
+    lint: false
 ...
