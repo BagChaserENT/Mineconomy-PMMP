@@ -17,7 +17,7 @@ use CortexPE\Commando\args\RawStringArgument;
 class AddMoneyCommand extends BaseCommand {
 
     protected function prepare() : void{
-        $this->setPermission("mineconomy.op");
+        $this->setPermission($this->getPermission());
         $this->registerArgument(0, new RawStringArgument("player"));
         $this->registerArgument(1, new IntegerArgument("amount"));
     }
@@ -39,5 +39,9 @@ class AddMoneyCommand extends BaseCommand {
         $sql->addMoney($args["player"], $args["amount"]);
         $format = $sql->format($args["amount"]);
         $sender->sendMessage("Added " . $format . " to " . $args["player"] . " balance!");
+    }
+
+    protected function getPermission() : string{
+        return "mineconomy.op";
     }
 }
