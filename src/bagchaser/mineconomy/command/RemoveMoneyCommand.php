@@ -45,7 +45,7 @@ class RemoveMoneyCommand extends BaseCommand {
         $sender->sendMessage("Removed " . $format . " from " . $args["player"] . " balance!");
     }
 
-    protected function getPermission() : string{
+    public function getPermission() : string{
         return "mineconomy.op";
     }
 }
