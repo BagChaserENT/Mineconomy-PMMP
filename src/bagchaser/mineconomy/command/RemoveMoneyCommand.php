@@ -17,7 +17,7 @@ use CortexPE\Commando\args\RawStringArgument;
 class RemoveMoneyCommand extends BaseCommand {
 
     protected function prepare() : void{
-        $this->setPermission("mineconomy.op");
+        $this->setPermission($this->getPermission());
         $this->registerArgument(0, new RawStringArgument("player"));
         $this->registerArgument(1, new IntegerArgument("amount"));
     }
@@ -43,5 +43,9 @@ class RemoveMoneyCommand extends BaseCommand {
         $format = $sql->format($args["amount"]);
         $sql->removeMoney($args["player"], $args["amount"]);
         $sender->sendMessage("Removed " . $format . " from " . $args["player"] . " balance!");
+    }
+
+    protected function getPermission() : string{
+        return "mineconomy.op";
     }
 }
