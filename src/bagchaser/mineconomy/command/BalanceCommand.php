@@ -15,7 +15,7 @@ use CortexPE\Commando\BaseCommand;
 class BalanceCommand extends BaseCommand {
 
     protected function prepare() : void{
-        $this->setPermission($this->getPermission);
+        $this->setPermission($this->getPermission());
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args) : void{
