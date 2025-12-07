@@ -35,7 +35,7 @@ class SeeBalanceCommand extends BaseCommand {
         $sender->sendMessage($args["player"] . " balance is " . $format);
     }
 
-    protected function getPermission() : string{
+    public function getPermission() : string{
         return "mineconomy.cmd";
     }
 }
