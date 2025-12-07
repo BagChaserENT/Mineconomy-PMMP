@@ -41,7 +41,7 @@ class AddMoneyCommand extends BaseCommand {
         $sender->sendMessage("Added " . $format . " to " . $args["player"] . " balance!");
     }
 
-    protected function getPermission() : string{
+    public function getPermission() : string{
         return "mineconomy.op";
     }
 }
