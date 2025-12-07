@@ -22,7 +22,7 @@ class SetMoneyCommand extends BaseCommand {
         $this->registerArgument(1, new IntegerArgument("amount"));
     }
 
-    public function unRun(CommandSender $sender, string $aliasUsed, array $args) : void{
+    public function onRun(CommandSender $sender, string $aliasUsed, array $args) : void{
         if(!$sender instanceof Player){
             $sender->sendMessage("You must be a player to use this command!");
             return;
