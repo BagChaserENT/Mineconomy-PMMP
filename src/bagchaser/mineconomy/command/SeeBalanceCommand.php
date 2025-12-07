@@ -30,7 +30,7 @@ class SeeBalanceCommand extends BaseCommand {
             $sender->sendMessage("Player not found!");
             return;
         }
-        $balance = $sql=>getBalance($args["player"]);
+        $balance = $sql->getBalance($args["player"]);
         $format = $sql->format($balance);
         $sender->sendMessage($args["player"] . " balance is " . $format);
     }
