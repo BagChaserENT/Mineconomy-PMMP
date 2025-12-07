@@ -16,7 +16,7 @@ use CortexPE\Commando\args\RawStringArgument;
 class SeeBalanceCommand extends BaseCommand {
 
     protected function prepare() : void{
-        $this->setPermission("mineconomy.cmd");
+        $this->setPermission($this->getPermission());
         $this->registerArgument(0, new RawStringArgument("player"));
     }
 
@@ -33,5 +33,9 @@ class SeeBalanceCommand extends BaseCommand {
         $balance = $sql->getBalance($args["player"]);
         $format = $sql->format($balance);
         $sender->sendMessage($args["player"] . " balance is " . $format);
+    }
+
+    protected function getPermission() : string{
+        return "mineconomy.cmd";
     }
 }
