@@ -15,7 +15,7 @@ use CortexPE\Commando\BaseCommand;
 class BalanceCommand extends BaseCommand {
 
     protected function prepare() : void{
-        $this->setPermission("mineconomy.cmd");
+        $this->setPermission($this->getPermission);
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args) : void{
@@ -26,5 +26,9 @@ class BalanceCommand extends BaseCommand {
         $balance = DataBase::getInstance()->getBalance($sender);
         $format = DataBase::getInstance()->format($balance);
         $sender->sendMessage("Your balance is " . $format);
+    }
+
+    protected function getPermission() : string{
+        return "mineconomy.cmd";
     }
 }
